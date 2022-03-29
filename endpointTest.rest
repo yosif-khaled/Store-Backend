@@ -1,0 +1,161 @@
+# Required EndPoints
+# Index
+# Show
+# Create [token required]
+# Index [token required]
+# Show [token required]
+# Create N[token required]
+# Current Order by user (args: user id)[token required]
+
+
+###
+GET http://localhost:3001/users
+Authorization: Bearer <token>
+
+###
+GET http://localhost:3001/users/1
+Authorization: Bearer <token>
+
+###
+POST http://localhost:3001/users/register
+Content-Type: application/json
+
+{
+  "first_name": "test",
+  "last_name": "test",
+  "email": "test@gmail.com",
+  "pw_digest": "test"
+}
+
+###
+POST http://localhost:3001/users/login
+Content-Type: application/json
+
+{
+  "first_name": "test",
+  "last_name": "test",
+  "email": "test@gmail.com",
+  "pw_digest": "test"
+}
+
+###
+
+POST http://localhost:3001/users/login
+Content-Type: application/json
+
+{
+  "first_name": "test",
+  "last_name": "test",
+  "email": "test@gmail.com",
+  "pw_digest": "tet"
+}
+
+###
+PATCH http://localhost:3001/
+
+
+###
+DELETE http://localhost:3001/users
+Content-Type: application/json
+Authorization: Bearer <token>
+
+  {
+    "id": 8
+  }
+
+###
+GET http://localhost:3001/products
+
+
+###
+GET http://localhost:3001/products/3
+
+
+###
+POST http://localhost:3001/products
+content-type: application/json
+Authorization: Bearer <token>
+
+{
+    "product_name": "dark souls",
+    "price": 300
+}
+
+###
+PATCH http://localhost:3001/products
+content-type: application/json
+Authorization: Bearer <token>
+
+
+{   
+    "pid": 8,
+    "product_name": "dark souls 3",
+    "price": 450
+}
+
+###
+DELETE http://localhost:3001/products
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "pid": 8
+}
+
+### get all orders
+GET http://localhost:3001/orders
+content-type: application/json
+Authorization: Bearer <token>
+
+
+
+### get all orders for a certain user
+GET http://localhost:3001/1/orders
+content-type: application/json
+Authorization: Bearer <token>
+
+
+### get the complete order for a certain user
+GET http://localhost:3001/1/orders/4
+content-type: application/json
+Authorization: Bearer <token>
+
+
+### get most recent order
+GET http://localhost:3001/1/orders
+content-type: application/json
+Authorization: Bearer <token>
+
+
+### add product to order
+POST http://localhost:3001/orders
+content-type: application/json
+Authorization: Bearer <token>
+
+{
+    "order_id": 4,
+    "product_id": 3,
+    "quantity": 4
+}
+
+### create new order
+POST http://localhost:3001/1/orders
+content-type: application/json
+Authorization: Bearer <token>
+
+
+### update order status from active to complete
+PATCH http://localhost:3001/4/orders/22/checkedout
+content-type: application/json
+Authorization: Bearer <token>
+
+###
+DELETE http://localhost:3001/orders
+content-type: application/json
+Authorization: Bearer <token>
+
+{
+  "id": 22,
+  "user_id": "4",
+  "status": "active"
+}

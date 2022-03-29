@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "target": "es5",
+        "strict": true,
+        "rootDir": "./src",
+        "outDir": "./build",
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "removeComments": true
+    },
+    "include": [
+        "src/**/*.ts"
+, "src/tests/endpoint_test/userRouteSpec"    ],
+    "exclude": [
+        "node_modules",
+        "./build",
+        "spec"
+    ]
+}

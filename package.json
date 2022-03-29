@@ -1,0 +1,45 @@
+{
+  "name": "project_2",
+  "version": "0.0.3",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "run:test": "set NODE_ENV=test && db-migrate up --env=test &&  && npx nodemon ./build/server.js",
+    "run:dev": "db-migrate up:all && npx tsc && eslint \"src/**/*\" && nodemon ./build/server.js",
+    "reset:test": "db-migrate reset --env=test",
+    "reset:dev": "db-migrate reset",
+    "watch": "tsc -w",
+    "prettier": "prettier \"src/**/*\"",
+    "lint": "eslint \"src/**/*\"",
+    "jasmine": "jasmine",
+    "test": "tsc && db-migrate up:all --env=test && set NODE_ENV=test && npm run jasmine && db-migrate reset --env=test"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
+    "@types/jasmine": "^3.10.3",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^17.0.21",
+    "@types/pg": "^8.6.4",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jasmine": "^4.0.2",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "supertest": "^6.2.2"
+  }
+}
